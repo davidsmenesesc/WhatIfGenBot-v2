@@ -1,0 +1,9 @@
+version: "3.1"
+
+stories:
+
+- story: Choose model form
+  steps: 
+  - intent: load_model
+  - action: choose_model_form
+  - active_loop: choose_model_form

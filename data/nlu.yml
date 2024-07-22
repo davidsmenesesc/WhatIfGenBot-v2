@@ -1,0 +1,9 @@
+version: "3.1"
+
+nlu:
+- intent: load_model
+  examples: |
+    - I want to load a model
+    - I want to change my model
+    - Can you please use my model?
+    - I need to load a model

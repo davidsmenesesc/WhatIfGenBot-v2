@@ -1,0 +1,32 @@
+version: "3.1"
+
+intents:
+ - load_model
+
+actions:
+  - validate_choose_model_form
+  - action_ask_model
+entities:
+ - model
+slots:
+  model:
+    type: text
+    influence_conversation: false
+    mappings:
+    - type: from_text
+      conditions:
+        - active_loop: choose_model_form
+          requested_slot: model
+forms:
+  choose_model_form:
+    required_slots:
+      - model
+
+responses:
+  utter_load_successful:
+  - text: Your model has been loaded successfully. What do you want to do now?
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
